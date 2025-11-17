@@ -73,6 +73,7 @@ html {
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .navbar-brand {
@@ -215,7 +216,6 @@ html {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23339fd7" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   z-index: -1;
-  animation: backgroundShift 20s ease-in-out infinite;
 }
 
 .hero-section h1 {
@@ -224,7 +224,6 @@ html {
   font-size: 2.5rem;
   line-height: 1.3;
   margin-bottom: 1rem;
-  animation: fadeInLeft 1s ease-out;
 }
 
 .hero-section .lead {
@@ -232,15 +231,6 @@ html {
   color: var(--gray-600);
   margin-bottom: 1.5rem;
   font-weight: 400;
-  animation: fadeInLeft 1s ease-out 0.3s both;
-}
-
-.hero-section .btn {
-  animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.hero-section .btn:hover {
-  animation: pulse 2s infinite;
 }
 
 /* CRM Animation Styles */
@@ -248,7 +238,8 @@ html {
   position: relative;
   height: 500px;
   padding: 20px;
-  animation: slideInRight 1.2s ease-out;
+  width: 100%;
+  max-width: 100%;
 }
 
 .crm-dashboard {
@@ -258,7 +249,6 @@ html {
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(51, 159, 215, 0.2);
-  animation: fadeInUp 1s ease-out 0.5s both;
 }
 
 .dashboard-header {
@@ -285,7 +275,6 @@ html {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
-  animation: countUp 2s ease-out 1s both;
 }
 
 .stat-label {
@@ -432,7 +421,6 @@ html {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow);
-  animation: floatingIcon 4s ease-in-out infinite;
 }
 
 .floating-icon i {
@@ -443,19 +431,16 @@ html {
 .icon-1 {
   top: 10%;
   right: 10%;
-  animation-delay: 0.5s;
 }
 
 .icon-2 {
   top: 60%;
   right: 5%;
-  animation-delay: 1.5s;
 }
 
 .icon-3 {
   top: 30%;
   left: 5%;
-  animation-delay: 2.5s;
 }
 
 /* Cards */
@@ -464,32 +449,11 @@ html {
   border-radius: var(--border-radius-lg);
   transition: all 0.3s ease;
   overflow: hidden;
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  animation: float 3s ease-in-out infinite;
-}
-
-.card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.card:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.card:nth-child(6) {
-  animation-delay: 0.6s;
 }
 
 .card-body {
@@ -523,6 +487,7 @@ html {
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
+  width: 100%;
 }
 
 .slide {
@@ -846,23 +811,97 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+
+  .login-btn {
+    display: none;
+  }
+
+  .social-links {
+    display: none;
+  }
+
+  .crm-animation-container {
+    height: 400px;
+    margin-top: 2rem;
+  }
+
+  .interface-slider {
+    margin-top: 2rem;
+  }
+
+  .slider-container {
+    height: 300px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     text-align: center;
     padding-top: 80px;
+    min-height: auto;
+    padding-bottom: 3rem;
   }
 
   .hero-section h1 {
-    font-size: 1.8rem;
-    animation: fadeInUp 1s ease-out;
+    font-size: 1.5rem;
   }
 
   .hero-section .lead {
-    animation: fadeInUp 1s ease-out 0.2s both;
+    font-size: 1rem;
   }
 
-  .hero-section .btn {
-    animation: fadeInUp 1s ease-out 0.4s both;
+  .crm-animation-container {
+    height: 350px;
+    padding: 10px;
+  }
+
+  .crm-dashboard {
+    padding: 15px;
+  }
+
+  .dash-title {
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stage-title {
+    font-size: 0.7rem;
+  }
+
+  .pipeline-container {
+    gap: 10px;
+  }
+
+  .chart-title {
+    font-size: 0.8rem;
+  }
+
+  .chart-bars {
+    height: 60px;
+  }
+
+  .floating-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .floating-icon i {
+    font-size: 0.9rem;
+  }
+
+  .slider-container {
+    height: 250px;
   }
 
   .whatsapp-float span {
@@ -872,11 +911,16 @@ footer {
   .whatsapp-float {
     padding: 15px;
     border-radius: 50%;
-    animation: pulse 3s infinite;
+    bottom: 15px;
+    right: 15px;
   }
 
   .card-body {
     padding: 1rem;
+  }
+
+  .pricing-card {
+    margin-bottom: 1.5rem;
   }
 
   .h1,
@@ -891,21 +935,98 @@ footer {
   h3 {
     font-size: 1.1rem;
   }
+
+  .display-5 {
+    font-size: 1.4rem !important;
+  }
+
+  .navbar-brand img {
+    height: 35px;
+  }
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-section {
+    padding-top: 70px;
   }
 
   .hero-section h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+  }
+
+  .hero-section .lead {
+    font-size: 0.9rem;
   }
 
   .btn-lg {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .crm-animation-container {
+    height: 300px;
+  }
+
+  .dash-stats {
+    gap: 15px;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .pipeline-container {
+    gap: 8px;
+  }
+
+  .stage-title {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+
+  .pipeline-card {
+    height: 15px;
+  }
+
+  .chart-bars {
+    height: 50px;
+  }
+
+  .chart-labels {
+    font-size: 0.65rem;
+  }
+
+  .slider-container {
+    height: 200px;
+  }
+
+  .display-5 {
+    font-size: 1.2rem !important;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .navbar-brand img {
+    height: 30px;
+  }
+
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+
+  .price {
+    font-size: 2.5rem;
+  }
+
+  .plan-name {
+    font-size: 1.3rem;
   }
 }
 
